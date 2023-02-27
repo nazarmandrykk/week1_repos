@@ -5,26 +5,23 @@ import java.util.ArrayList;
 
 public class App {
 
-    public static ArrayList<Character> getUniqueCharacters(ArrayList<String> strings) {
-        ArrayList<Character> uniqueChars = new ArrayList<>();
+    public static ArrayList<Character> charSearch(ArrayList<String> strings) {
+        ArrayList<Character> newchar = new ArrayList<>();
         for (String str : strings) {
             for (char c : str.toCharArray()) {
-                if (!uniqueChars.contains(c)) {
-                    uniqueChars.add(c);
+                if (!newchar.contains(c)) {
+                    newchar.add(c);
                 }
             }
         }
-        return uniqueChars;
+        return newchar;
     }
 
     public static void main(String[] args) {
         ArrayList<String> strings = new ArrayList<>();
         strings.add("thisIsString1");
-        strings.add("thisString2");
-
-
-        ArrayList<Character> uniqueChars = getUniqueCharacters(strings);
-        for (char c : uniqueChars) {
+        ArrayList<Character> newchar = charSearch(strings);
+        for (char c : newchar) {
             System.out.println(c);
         }
     }
